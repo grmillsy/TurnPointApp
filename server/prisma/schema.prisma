@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://g_millsy:password123@localhost:5432/millsy_management"
+  url      = "postgresql://elon_musk:RocketToSpace123@localhost:5432/rich_list"
 }
 
 generator client {

@@ -3,15 +3,15 @@ services:
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_USER: g_millsy
-      POSTGRES_PASSWORD: password123
-      POSTGRES_DB: millsy_management
+      POSTGRES_USER: elon_musk
+      POSTGRES_PASSWORD: RocketToSpace123
+      POSTGRES_DB: rich_list
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "g_millsy" ]
+      test: [ "CMD", "pg_isready", "-U", "elon_musk" ]
       interval: 10s
       retries: 5
       start_period: 30s
