@@ -49,3 +49,4 @@ If the above script hangs or fails, run the following to get the project started
 ## Decisions made
 * Prisma: I chose to add prisma as a query builder to allow easier querying and typing.
 * Tailwind: I added tailwind to speed up visual development so I could concentrate on the functionality. 
+* Hard coding the prisma url - Normally this would go in an env variable but for this example I have hard coded it. 
