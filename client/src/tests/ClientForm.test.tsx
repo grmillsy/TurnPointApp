@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import ClientForm from '../components/ClientForm';
 import { addClient } from '../utils/dataHelper';
 
-// Mocking the `addClient` function
 jest.mock('../utils/dataHelper', () => ({
     addClient: jest.fn(),
 }));
@@ -16,7 +15,6 @@ describe.skip('ClientForm', () => {
     test('renders the form and starts at step 1', () => {
         render(<ClientForm />);
 
-        // Check that step 1 is rendered
         expect(screen.getByText('Hello,')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Mr Squigles')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('01/01/1983')).toBeInTheDocument();

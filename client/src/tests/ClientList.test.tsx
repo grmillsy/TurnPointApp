@@ -3,7 +3,6 @@ import ClientList from '../components/ClientList';
 import { getData } from '../utils/dataHelper';
 import { ClientType } from '../utils/types';
 
-// Mock the getData function
 jest.mock('../utils/dataHelper', () => ({
     getData: jest.fn(),
 }));
