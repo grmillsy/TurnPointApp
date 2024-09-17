@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wait:db":  "wait-on tcp:5432",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "db:init": "npm run prisma:migrate:dev && npm run prisma:generate",
+    "start:db": "docker-compose up -d",
+    "start:server" : "node index.js",
+    "start": "npm run start:db && echo 'Waiting for DB...' && npm run wait:db && echo 'DB is ready. Initializing database...' && npm run db:init && echo 'Starting server...' && node index.js",
+    "dev": "npm run db:init && nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^5.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.4",
+    "prisma": "^5.19.1"
+  },
+  "devDependencies": {
+    "wait-on": "^8.0.1"
+  }
+}

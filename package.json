@@ -1,0 +1,18 @@
+{
+  "name": "turn-point-app",
+  "version": "1.0.0",
+  "scripts": {
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "install": "concurrently \"npm run install:client\" \"npm run install:server\"",
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm start",
+    "start": "concurrently -k \"npm run start:client\" \"npm run start:server\" ",
+    "stop:db": "docker-compose down",
+    "stop": "npm run stop:db"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "wait-on": "^8.0.1"
+  }
+}

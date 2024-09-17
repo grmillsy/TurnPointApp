@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://g_millsy:password123@localhost:5432/millsy_management"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Client {
+  id                Int           @id @default(autoincrement())
+  name              String
+  dateOfBirth       String
+  mainLanguage      String
+  secondaryLanguage String?
+  fundingSource     FundingSource
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+enum FundingSource {
+  NDIS
+  HCP
+  CHSP
+  DVA
+  HACC
+}
