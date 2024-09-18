@@ -14,7 +14,9 @@ export type ClientType = {
     dateOfBirth: string,
     fundingSource: string
 }
-
+export interface ClientResponse extends ClientType {
+    id: number
+}
 export type FormSectionProps = {title: string, description: string, children: ReactNode}
 
 export type ButtonProps = {

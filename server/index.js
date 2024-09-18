@@ -40,6 +40,20 @@ app.post('/client', async(req, res) => {
     }
 })
 
+app.delete('/client/:id', async(req, res) => {
+    const {id} = req.params
+
+    try {
+        const deletedClient = await prisma.client.delete({
+            where: {
+                id: Number(id)
+            }
+        });
+        res.json(deletedClient)
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+})
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

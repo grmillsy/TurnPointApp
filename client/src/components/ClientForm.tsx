@@ -6,7 +6,7 @@ import {addClient} from "../utils/dataHelper.ts";
 import FormSection from "./FormSection.tsx";
 import Button from "./Button.tsx";
 
-const OPTIONS = ['NIDS', 'HCP', 'CHSP', 'DVA', 'HACC']
+const OPTIONS = ['NDIS', 'HCP', 'CHSP', 'DVA', 'HACC']
 
 const ClientForm = () => {
     const [step, setStep] = useState<number>(1)
@@ -55,7 +55,6 @@ const ClientForm = () => {
     }
     const _handlePrev = () => {
         setStep(step - 1)
-
     }
 
     return (
