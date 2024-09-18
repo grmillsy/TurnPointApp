@@ -8,7 +8,7 @@ const tableHeaders = [
     "Main Language",
     "Secondary Language",
     "Funding Source",
-    "Options"
+    "Delete"
 ];
 const ClientList = () => {
     const [clientList, setClientList] = useState<ClientResponse[]>([])
@@ -64,10 +64,7 @@ const ClientList = () => {
                             <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{client.fundingSource}</td>
                             <td>
                                 <div className="flex flex-row justify-evenly">
-                                    <div>
-                                        {PencilIcon}
-                                    </div>
-                                    <div onClick={() => handleDeleteClient(client.id)}>
+                                    <div className="cursor-pointer" onClick={() => handleDeleteClient(client.id)}>
                                         {TrashIcon}
                                     </div>
                                 </div>
